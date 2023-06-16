@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>div generator</title>
+    <style>
+        .custom-div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="sfondo" placeholder="Colore di sfondo">
+    <input type="text" id="testo" placeholder="Colore del testo">
+    <input type="text" id="contenuto" placeholder="Contenuto">
+    <button id="crea">Crea</button>
+
+    <div id="container"></div>
+
+    <script>
+        document.getElementById('crea').addEventListener('click', function () {
+            const sfondo = document.getElementById('sfondo').value;
+            const testo = document.getElementById('testo').value;
+            const contenuto = document.getElementById('contenuto').value;
+
+            const div = document.createElement('div');
+            div.style.background = sfondo;
+            div.style.color = testo;
+            div.textContent = contenuto;
+            div.classList.add('custom-div');
+
+            document.getElementById('container').appendChild(div);
+        });
+    </script>
+</body>
+
+</html>
